@@ -11,6 +11,9 @@
 # production
 /build
 
+dbs.js
+
+
 # misc
 .DS_Store
 .env.local

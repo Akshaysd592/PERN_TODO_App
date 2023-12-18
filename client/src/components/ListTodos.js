@@ -1,4 +1,7 @@
-import React,{Fragment,useState , useEffect} from 'react'
+import React,{Fragment,useState , useEffect} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import { EditTodo } from './EditTodo';
 
 export const ListTodos = () => {
@@ -13,10 +16,14 @@ export const ListTodos = () => {
             method:"DELETE"
           }  
           )
+          
 
           // console.log(deletetodo);
           // for rerendering on screen
+          toast.warn("Todo deleted Successfully");
          setTodos( todos.filter((todo)=> todo.todo_id !== id));
+         
+        
           
         } catch (error) {
           console.error(error.message);
@@ -46,7 +53,7 @@ export const ListTodos = () => {
 
 
   return <Fragment>
-    {" "}
+   
     <table className="table mt-5 text-center text-black ">
     <thead>
       <tr>
@@ -70,5 +77,6 @@ export const ListTodos = () => {
       
     </tbody>
   </table>
+ 
   </Fragment>
 }

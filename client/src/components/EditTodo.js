@@ -1,4 +1,7 @@
 import React, { Fragment, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export const EditTodo = ({todo}) => {
     const [description,setDescription] = useState(todo.description);
@@ -11,8 +14,8 @@ export const EditTodo = ({todo}) => {
                 method:"PUT",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify(body),
-            })
-            
+            }
+            )
             // console.log(response);
             window.location= "/";
         } catch (error) {
@@ -55,5 +58,6 @@ export const EditTodo = ({todo}) => {
     </div>
   </div>
 </div>
+
   </Fragment>
 }
